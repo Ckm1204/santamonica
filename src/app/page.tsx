@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import RightsSection from "@/components/RightsSection";
@@ -11,17 +13,24 @@ import MythsSection from "@/components/MythsSection";
 import ContactSection from "@/components/ContactSection";
 import InstitutionalSection from "@/components/InstitutionalSection";
 import Footer from "@/components/Footer";
+import AppointmentModal from "@/components/AppointmentModal";
 
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans text-on-surface">
-      <Header />
+      <Header onOpenModal={handleOpenModal} />
       <main className="w-full flex-1">
-        <Hero />
+        <Hero onOpenModal={handleOpenModal} />
         <RightsSection />
-        <QuizSection />
+        <QuizSection onOpenModal={handleOpenModal} />
         <MethodsComparator />
-        <SinoimplantSection />
+        <SinoimplantSection onOpenModal={handleOpenModal} />
         <TechnicalSheet />
         <ProcedureSection />
         <MythsSection />
@@ -29,6 +38,10 @@ export default function Home() {
         <InstitutionalSection />
       </main>
       <Footer />
+      <AppointmentModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+      />
     </div>
   );
 }

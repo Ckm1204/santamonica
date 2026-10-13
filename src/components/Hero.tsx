@@ -1,7 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
-export default function Hero() {
+export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
+  const handleBookingClick = (e: React.MouseEvent) => {
+    if (onOpenModal) {
+      e.preventDefault();
+      onOpenModal();
+    }
+  };
+
   return (
     <section
       className="relative overflow-hidden bg-gradient-to-b from-surface-variant/40 via-background to-background pt-8 pb-16 lg:py-16"
@@ -67,8 +74,9 @@ export default function Hero() {
             {/* CTAs with Dynamic look */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-3">
               <a
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-extrabold text-sm shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-extrabold text-sm shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all hover:-translate-y-0.5 cursor-pointer"
                 href="#contacto"
+                onClick={handleBookingClick}
               >
                 <span>Agendar Cita Fácil y Rápido</span>
                 <span className="material-symbols-outlined text-[18px]">

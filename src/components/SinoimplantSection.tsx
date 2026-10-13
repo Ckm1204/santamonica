@@ -5,8 +5,19 @@ import Image from "next/image";
 
 type TabKey = "porque" | "mecanismo" | "quienes";
 
-export default function SinoimplantSection() {
+export default function SinoimplantSection({
+  onOpenModal,
+}: {
+  onOpenModal?: () => void;
+}) {
   const [activeTab, setActiveTab] = useState<TabKey>("porque");
+
+  const handleBookingClick = (e: React.MouseEvent) => {
+    if (onOpenModal) {
+      e.preventDefault();
+      onOpenModal();
+    }
+  };
 
   return (
     <section
@@ -277,8 +288,9 @@ export default function SinoimplantSection() {
 
             <div className="pt-2 flex items-center gap-4">
               <a
-                className="px-5 py-3 rounded-2xl bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white text-xs font-bold flex items-center gap-2 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                className="px-5 py-3 rounded-2xl bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white text-xs font-bold flex items-center gap-2 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
                 href="#contacto"
+                onClick={handleBookingClick}
               >
                 <span className="material-symbols-outlined text-[18px]">
                   calendar_month

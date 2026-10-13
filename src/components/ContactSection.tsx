@@ -8,16 +8,67 @@ export default function ContactSection() {
     phone: "",
     age: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/agendar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre_completo: formData.name,
+          telefono: formData.phone,
+          edad: formData.age,
+        }),
+      });
+
+      if (!res.ok) {
+        // Fallback directo a Google Apps Script
+        await fetch(
+          "https://script.google.com/macros/s/AKfycbxPGwLAZUUa8xDXt8RC9aQ-vXlCXftJ2vBRAhow6xD-yrgMpq1TjHpsOkydfJXbIqsY6g/exec",
+          {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              nombre_completo: formData.name,
+              telefono: formData.phone,
+              edad: formData.age,
+            }),
+          }
+        );
+      }
+    } catch {
+      try {
+        await fetch(
+          "https://script.google.com/macros/s/AKfycbxPGwLAZUUa8xDXt8RC9aQ-vXlCXftJ2vBRAhow6xD-yrgMpq1TjHpsOkydfJXbIqsY6g/exec",
+          {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              nombre_completo: formData.name,
+              telefono: formData.phone,
+              edad: formData.age,
+            }),
+          }
+        );
+      } catch (err) {
+        console.error("Error al registrar en Google Sheets:", err);
+      }
+    } finally {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   const handleWhatsAppDirect = () => {
     const text = encodeURIComponent(
-      `Hola, deseo agendar mi cita gratuita para el implante Sinoimplant® 150 mg en el Hospital Santa Mónica.${
+      `Hola, acabo de solicitar mi cita para el implante Sinoimplant® 150 mg en el Hospital Santa Mónica.${
         formData.name ? ` Mi nombre es ${formData.name}.` : ""
       }${formData.age ? ` Tengo ${formData.age} años.` : ""}`
     );
@@ -118,97 +169,121 @@ export default function ContactSection() {
                 </p>
               </div>
 
-              <form className="space-y-3" onSubmit={handleSubmit}>
-                <div>
-                  <label
-                    className="block text-xs font-bold text-on-surface mb-1"
-                    htmlFor="nameInput"
-                  >
-                    Nombre y Apellidos
-                  </label>
-                  <input
-                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-surface-variant focus:border-primary focus:ring-1 focus:ring-primary bg-background outline-none transition-colors"
-                    id="nameInput"
-                    placeholder="Ej. Andrea Gómez"
-                    required
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                  />
-                </div>
-                <div className="grid grid-cols-2 gap-3">
+              {!submitted ? (
+                <form className="space-y-3" onSubmit={handleSubmit}>
                   <div>
                     <label
                       className="block text-xs font-bold text-on-surface mb-1"
-                      htmlFor="phoneInput"
+                      htmlFor="nameInput"
                     >
-                      Teléfono Móvil
+                      Nombre y Apellidos
                     </label>
                     <input
                       className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-surface-variant focus:border-primary focus:ring-1 focus:ring-primary bg-background outline-none transition-colors"
-                      id="phoneInput"
-                      placeholder="310 000 0000"
+                      id="nameInput"
+                      placeholder="Ej. Andrea Gómez"
                       required
-                      type="tel"
-                      value={formData.phone}
+                      type="text"
+                      value={formData.name}
                       onChange={(e) =>
-                        setFormData({ ...formData, phone: e.target.value })
+                        setFormData({ ...formData, name: e.target.value })
                       }
                     />
                   </div>
-                  <div>
-                    <label
-                      className="block text-xs font-bold text-on-surface mb-1"
-                      htmlFor="ageInput"
-                    >
-                      Edad
-                    </label>
-                    <input
-                      className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-surface-variant focus:border-primary focus:ring-1 focus:ring-primary bg-background outline-none transition-colors"
-                      id="ageInput"
-                      max="55"
-                      min="13"
-                      placeholder="Ej. 20"
-                      type="number"
-                      value={formData.age}
-                      onChange={(e) =>
-                        setFormData({ ...formData, age: e.target.value })
-                      }
-                    />
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label
+                        className="block text-xs font-bold text-on-surface mb-1"
+                        htmlFor="phoneInput"
+                      >
+                        Teléfono Móvil
+                      </label>
+                      <input
+                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-surface-variant focus:border-primary focus:ring-1 focus:ring-primary bg-background outline-none transition-colors"
+                        id="phoneInput"
+                        placeholder="310 000 0000"
+                        required
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
+                      />
+                    </div>
+                    <div>
+                      <label
+                        className="block text-xs font-bold text-on-surface mb-1"
+                        htmlFor="ageInput"
+                      >
+                        Edad
+                      </label>
+                      <input
+                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-surface-variant focus:border-primary focus:ring-1 focus:ring-primary bg-background outline-none transition-colors"
+                        id="ageInput"
+                        max="55"
+                        min="13"
+                        placeholder="Ej. 20"
+                        required
+                        type="number"
+                        value={formData.age}
+                        onChange={(e) =>
+                          setFormData({ ...formData, age: e.target.value })
+                        }
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <button
-                  className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 cursor-pointer"
-                  type="submit"
-                >
-                  <span className="material-symbols-outlined text-[18px]">send</span>
-                  <span>Confirmar Solicitud de Cita Gratuita</span>
-                </button>
-              </form>
-
-              {/* Success Feedback Box */}
-              {submitted && (
-                <div className="p-4 rounded-2xl bg-primary-fixed/60 border border-primary text-primary-dark text-xs space-y-2 animate-fade-in">
-                  <div className="flex items-center gap-2 font-bold">
-                    <span className="material-symbols-outlined text-primary text-[20px]">
+                  <button
+                    disabled={isSubmitting}
+                    className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 cursor-pointer disabled:opacity-70"
+                    type="submit"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        <span>Enviando solicitud...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="material-symbols-outlined text-[18px]">send</span>
+                        <span>Confirmar Solicitud de Cita Gratuita</span>
+                      </>
+                    )}
+                  </button>
+                </form>
+              ) : (
+                /* Success Feedback Box */
+                <div className="p-5 rounded-2xl bg-primary-fixed/60 border border-primary text-primary-dark text-xs space-y-3 animate-fade-in text-center">
+                  <div className="w-10 h-10 mx-auto rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
+                    <span className="material-symbols-outlined text-[24px]">
                       check_circle
                     </span>
-                    <span>¡Solicitud registrada con éxito!</span>
                   </div>
-                  <p className="text-[11px] leading-relaxed">
-                    El equipo de Pasto Salud te contactará. Si deseas atención inmediata,
-                    puedes abrir una conversación directa por WhatsApp:
-                  </p>
+                  <div>
+                    <h4 className="text-sm font-bold text-on-surface">
+                      ¡Solicitud registrada con éxito!
+                    </h4>
+                    <p className="text-[11px] text-on-surface-variant mt-1 leading-relaxed">
+                      El equipo de Pasto Salud Santa Mónica ha recibido tu solicitud. Si deseas atención inmediata, puedes abrir un chat directo por WhatsApp:
+                    </p>
+                  </div>
                   <button
                     type="button"
                     onClick={handleWhatsAppDirect}
-                    className="w-full mt-1 py-2 px-3 rounded-xl bg-white hover:bg-primary-fixed text-primary-dark font-extrabold border border-primary/40 flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                    className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-primary to-primary-dark text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-sm hover:shadow-md cursor-pointer"
                   >
                     <span className="material-symbols-outlined text-[16px]">chat</span>
-                    <span>Continuar a WhatsApp Oficial</span>
+                    <span>Confirmar por WhatsApp Oficial</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({ name: "", phone: "", age: "" });
+                    }}
+                    className="text-[11px] text-primary-dark font-bold hover:underline block mx-auto"
+                  >
+                    Enviar otra solicitud
                   </button>
                 </div>
               )}

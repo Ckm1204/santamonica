@@ -3,8 +3,15 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-export default function Header() {
+export default function Header({ onOpenModal }: { onOpenModal?: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleBookingClick = (e: React.MouseEvent) => {
+    if (onOpenModal) {
+      e.preventDefault();
+      onOpenModal();
+    }
+  };
 
   return (
     <>
@@ -55,8 +62,9 @@ export default function Header() {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1.5 bg-surface-container-low p-1.5 rounded-full border border-surface-variant">
             <a
-              className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-primary-fixed text-primary-dark hover:bg-white transition-colors flex items-center gap-1 shadow-sm"
+              className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-primary-fixed text-primary-dark hover:bg-white transition-colors flex items-center gap-1 shadow-sm cursor-pointer"
               href="#contacto"
+              onClick={handleBookingClick}
             >
               <span className="material-symbols-outlined text-[15px]">calendar_month</span>
               Agenda tu Cita Fácil y Rápido
@@ -97,15 +105,17 @@ export default function Header() {
           {/* Action Buttons */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <a
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white text-xs font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white text-xs font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
               href="#contacto"
+              onClick={handleBookingClick}
             >
               <span className="material-symbols-outlined text-[18px]">calendar_today</span>
               <span>Agendar en Hospital Santa Mónica</span>
             </a>
             <a
-              className="sm:hidden p-2.5 rounded-full bg-primary text-white shadow-md hover:bg-primary-dark transition-colors"
+              className="sm:hidden p-2.5 rounded-full bg-primary text-white shadow-md hover:bg-primary-dark transition-colors cursor-pointer"
               href="#contacto"
+              onClick={handleBookingClick}
               aria-label="Agendar Cita"
             >
               <span className="material-symbols-outlined text-[20px]">calendar_today</span>

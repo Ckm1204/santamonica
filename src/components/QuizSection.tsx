@@ -28,9 +28,20 @@ const quizData: Record<QuizType, QuizResult> = {
   },
 };
 
-export default function QuizSection() {
+export default function QuizSection({
+  onOpenModal,
+}: {
+  onOpenModal?: () => void;
+}) {
   const [selected, setSelected] = useState<QuizType>("olvidos");
   const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleBookingClick = (e: React.MouseEvent) => {
+    if (onOpenModal) {
+      e.preventDefault();
+      onOpenModal();
+    }
+  };
 
   const handleSelect = (type: QuizType) => {
     setIsAnimating(true);
@@ -187,8 +198,9 @@ export default function QuizSection() {
               </div>
             </div>
             <a
-              className="shrink-0 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              className="shrink-0 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
               href="#contacto"
+              onClick={handleBookingClick}
             >
               <span>Agendar Valoración Gratuita</span>
               <span className="material-symbols-outlined text-[16px]">chevron_right</span>
