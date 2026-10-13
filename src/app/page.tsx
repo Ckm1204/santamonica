@@ -23,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background font-sans text-on-surface">
+    <div className="min-h-screen flex flex-col bg-background font-sans text-on-surface overflow-x-clip">
       <Header onOpenModal={handleOpenModal} />
       <main className="w-full flex-1">
         <Hero onOpenModal={handleOpenModal} />

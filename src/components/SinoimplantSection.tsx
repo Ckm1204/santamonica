@@ -21,7 +21,7 @@ export default function SinoimplantSection({
 
   return (
     <section
-      className="py-16 bg-gradient-to-b from-surface-container-low via-surface-variant/30 to-background border-y border-surface-variant"
+      className="py-16 bg-gradient-to-b from-surface-container-low via-surface-variant/30 to-background border-y border-surface-variant scroll-mt-24"
       id="sinoimplant"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">

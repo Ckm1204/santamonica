@@ -67,9 +67,8 @@ export default function Header({ onOpenModal }: { onOpenModal?: () => void }) {
           {/* Desktop Nav Capsule - Exact match to design */}
           <nav className="hidden lg:flex items-center gap-2 xl:gap-5 bg-[#fff5f9] px-3 xl:px-4 py-1.5 rounded-full border border-pink-200/80 shadow-sm">
             <a
-              className="text-[11px] xl:text-xs font-bold text-[#1e293b] hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
+              className="text-[11px] xl:text-xs font-bold text-[#1e293b] hover:text-primary transition-colors whitespace-nowrap"
               href="#contacto"
-              onClick={handleBookingClick}
             >
               Agendar tu Cita Fácil y Rápido
             </a>
@@ -168,10 +167,7 @@ export default function Header({ onOpenModal }: { onOpenModal?: () => void }) {
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-surface-variant bg-white px-4 py-4 space-y-2.5 shadow-lg animate-fade-in">
             <a
-              onClick={(e) => {
-                setMobileMenuOpen(false);
-                handleBookingClick(e);
-              }}
+              onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#fff5f9] text-[#1e293b] border border-pink-200"
               href="#contacto"
             >

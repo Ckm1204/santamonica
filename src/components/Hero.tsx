@@ -11,7 +11,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
 
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-b from-surface-variant/40 via-background to-background pt-8 pb-16 lg:py-16"
+      className="relative overflow-hidden bg-gradient-to-b from-surface-variant/40 via-background to-background pt-8 pb-16 lg:py-16 scroll-mt-24"
       id="inicio"
     >
       <div className="absolute -top-32 -left-32 w-96 h-96 bg-primary-fixed/60 rounded-full blur-3xl pointer-events-none" />

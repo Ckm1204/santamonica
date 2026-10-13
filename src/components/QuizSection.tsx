@@ -50,7 +50,7 @@ export default function QuizSection({
   };
 
   return (
-    <section className="py-12 bg-white border-y border-surface-variant" id="quiz">
+    <section className="py-12 bg-white border-y border-surface-variant scroll-mt-24" id="quiz">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="bg-gradient-to-br from-surface-container-low via-white to-surface-variant/40 p-6 sm:p-8 rounded-3xl border border-primary-fixed shadow-md">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">

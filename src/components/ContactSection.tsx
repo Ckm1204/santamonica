@@ -76,7 +76,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-16 bg-background" id="contacto">
+    <section className="py-16 bg-background scroll-mt-24" id="contacto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-br from-white via-surface-container-low to-surface-variant/50 rounded-3xl p-6 sm:p-10 lg:p-12 border border-primary-fixed shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
