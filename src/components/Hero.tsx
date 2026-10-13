@@ -146,7 +146,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
               </div>
 
               {/* Top-Right Floating Pill Badge */}
-              <div className="absolute -top-4 -right-2 sm:-right-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl border border-primary-fixed flex items-center gap-3 animate-bounce [animation-duration:3s]">
+              <div className="absolute -top-3 right-1 sm:-right-4 bg-white/95 backdrop-blur-md px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl border border-primary-fixed flex items-center gap-2.5 sm:gap-3 animate-bounce [animation-duration:3s]">
                 <div className="w-9 h-9 rounded-xl bg-primary-fixed flex items-center justify-center text-primary-dark">
                   <span className="material-symbols-outlined text-[20px]">
                     check_circle

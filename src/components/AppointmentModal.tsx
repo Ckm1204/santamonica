@@ -97,7 +97,7 @@ export default function AppointmentModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-secondary-container/50 backdrop-blur-sm animate-fade-in">
       <div
-        className="relative w-full max-w-lg bg-white p-6 sm:p-8 rounded-3xl shadow-2xl border-2 border-primary-fixed"
+        className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto bg-white p-5 sm:p-8 rounded-3xl shadow-2xl border-2 border-primary-fixed"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
