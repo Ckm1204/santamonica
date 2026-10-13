@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Salud Sexual y Reproductiva - Pasto Salud E.S.E. & UCC
 
-## Getting Started
+Sitio web informativo e interactivo para la promoción de la salud sexual, reproductiva y acceso gratuito al implante subdérmico **Sinoimplant® (Levonorgestrel 150 mg)** en el Hospital Santa Mónica, en convenio entre Pasto Salud E.S.E. y la Universidad Cooperativa de Colombia (UCC).
 
-First, run the development server:
+## 🚀 Tecnologías
+
+- **Next.js 16** (App Router)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Google Fonts** (DM Sans & Material Symbols)
+
+---
+
+## 💻 Desarrollo Local
+
+Para correr el proyecto localmente:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para probar la compilación de producción:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ☁️ Despliegue en Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+El proyecto está 100% configurado y optimizado para desplegarse en **Vercel** sin necesidad de configuración adicional.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Opción 1: Despliegue desde GitHub (Recomendado)
 
-## Deploy on Vercel
+1. Sube este repositorio a tu cuenta de GitHub:
+   ```bash
+   git add .
+   git commit -m "feat: landing salud sexual y reproductiva pasto salud"
+   git branch -M main
+   git remote add origin https://github.com/TU-USUARIO/santamonica.git
+   git push -u origin main
+   ```
+2. Ve a [vercel.com](https://vercel.com/) e inicia sesión con tu cuenta de GitHub.
+3. Haz clic en **"Add New..."** > **"Project"**.
+4. Selecciona el repositorio `santamonica` e impórtalo.
+5. Vercel detectará automáticamente que es un proyecto **Next.js**.
+6. Haz clic en **Deploy**. ¡Tu página estará en línea en segundos con HTTPS y CDN global!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Opción 2: Despliegue directo mediante Vercel CLI
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Si tienes instalado o quieres usar el CLI de Vercel directamente en la terminal:
+
+```bash
+npx vercel
+```
+
+Sigue las instrucciones en pantalla para vincular tu cuenta y tu proyecto. Para desplegar directamente a producción:
+
+```bash
+npx vercel --prod
+```
