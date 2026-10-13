@@ -118,7 +118,7 @@ export default function Hero() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-surface-container-low">
                 <div className="relative w-full h-[400px] sm:h-[480px]">
                   <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcLeRNYIOGzjy5uU-2-yMRioywfQTiCCLOyBuLvFJBdLKOO1uHlrmh2diyABg5_hDAaEI6fzt9ZAJt_86Ex0yff6g3thIdslula1vYpL1k-oN3PV7BIvtnJTMOSOYx3WaKGBX_OW-5_e5LzHXrYup7STrZzgfm1z70Se_CTQ59FqyLuFfRjOJrCHQu7IlrRTxEy3UxItJVKl9xkI6QI-LNYEP1PHyJoeTKfxKDiIGARv6OphPoMjhZbL_22NUI5tDSRg"
+                    src="/images/hospital-santa-monica.png"
                     alt="Hospital Santa Mónica — Fachada e instalaciones modernas para tu atención"
                     fill
                     priority

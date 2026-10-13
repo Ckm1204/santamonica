@@ -35,7 +35,7 @@ export default function TechnicalSheet() {
                 <div className="relative bg-gradient-to-b from-surface-container-low to-white p-6 rounded-3xl border border-surface-variant shadow-lg text-center">
                   <div className="relative w-full h-64">
                     <Image
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4ehDTGkU6GfO1f_dVJfKIgCi_oWuDHQBeiiaL48Zhha0mo3fzMZN5CWWjA22H1ZMHmStjyw_jp13TDB-VMr2YXJIWktLPee4bjMwQSNmjyHluAf_PgQHBAf_kzBw9pe_gJ3BNYSiK6rh4MMF3IhrejsRBfPxgPqt2bXvJmB7KS8lxTnjhCH3t2o8K2fJuwdeQhQlaM8FnSK8-AmxjWoXGaLaRcb_w-dzXHOsE6brTCj-cG04OZfKcgoEuyL75m05ZeA"
+                      src="/images/caja-sinoimplant.png"
                       alt="Caja oficial de Sinoimplant 150 mg Levonorgestrel"
                       fill
                       sizes="(max-width: 640px) 100vw, 320px"
@@ -221,7 +221,7 @@ export default function TechnicalSheet() {
                 <div className="sm:col-span-5 rounded-2xl overflow-hidden border border-surface-variant shadow-sm bg-surface-container-low">
                   <div className="relative w-full h-40">
                     <Image
-                      src="https://lh3.googleusercontent.com/aida/AEtjO1Xq_Q5FXtNpIKAcsc3fJm7cWABnFWXSpw769RJOhtpu041UuXBz8Re39KKNe1u5WjuHxQ3e8pGT76y1op1tfZdahjei4HPbjpav103wgCaQlBLnqSn1J_4iE2j-J3Wvxj1-eIfr9AHOUWvkz2C5bzqty8ZADwxTVCgBSJbkE8GkzD69yULQrTcswNSbhKOZPCiWxRsJeMxMVkVNm38WMk4l8eI_9LA8f7T6dwl2uY9Ej-GtI058xcv-jEg"
+                      src="/images/insercion-brazo-medica.png"
                       alt="Ilustración médica de inserción subdérmica en brazo"
                       fill
                       sizes="(max-width: 640px) 100vw, 200px"
@@ -265,7 +265,7 @@ export default function TechnicalSheet() {
             <div className="rounded-3xl overflow-hidden bg-white border-2 border-primary-fixed shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
               <div className="relative overflow-hidden bg-surface-container-low w-full aspect-[4/3]">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJTEKnDux87v5bM0YROdc5fr6ZektoDofXEjQPFoovUxMV7wC725HLj1AN-6ZyDNh-WNP-_8oBwb7P1-gaLy7qM_elMDL7bz05n5Df6sSjAGllprE3dn45lloSZGHyeL943qumaXoZliLewn0s9vJnCfStmKP3GmBdZs0cCe9HNrTY1BjPD-_XzrUG1maEmftLiJIgXon3s6tk3fEYcB-O57bWHqIU5LZphktEXYOHR3vzXeX8SJOJAgIhqiv0Fb2m6g"
+                  src="/images/mecanismo-01-inhibe-ovulacion.png"
                   alt="Punto 01 - Inhibe la ovulación"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -276,7 +276,7 @@ export default function TechnicalSheet() {
             <div className="rounded-3xl overflow-hidden bg-white border-2 border-primary-fixed shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
               <div className="relative overflow-hidden bg-surface-container-low w-full aspect-[4/3]">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_466wUEEU4iuGXS4cKA8az-mYo6t4JlCvoeWXDe2lwnAVHUSEPF_kSVsJ34z3vD_ZNavuKIV03ZAURBnusTrAfujQ5MjZ6TJeX0K8rSsGqD9XapEGmkUR6knE16ie2DFEsr4K9hV5n1qzv_v6BoczkRbW1OadAfgRJ2Xeb5ISmcswggl6kjaoNfCeZc3_18ZRFjyu3rcwTaeYzDIgWIdbhHf5R7rIIRrq5-qhnQxycEMMjSRrfix12kVEq8G3Y6KhRw"
+                  src="/images/mecanismo-02-espesa-moco.png"
                   alt="Punto 02 - Espesa el moco cervical"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -287,7 +287,7 @@ export default function TechnicalSheet() {
             <div className="rounded-3xl overflow-hidden bg-white border-2 border-primary-fixed shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
               <div className="relative overflow-hidden bg-surface-container-low w-full aspect-[4/3]">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzIkcBspGtuWzDb17iE6PEIuwpscTyi8hgI63I71iBZYYBHEsk1T-c7DPhadnpt-J3uLK-g7SE7VlGt1pxy6rekRedVvvGQ98tdby1A0H6Pzsf3wUCaCYItrp4RpBr9n4cSFcQNQrtKxHqH8IB5MT9QOtmExMaujLEk2ESKwJtryH-g4J0NHo29MGGRRuqrK-2oU-YrGptdR-DICrYA1PtnGOHNs568tY6GsdsgiV8_acuoTFp9IWRsk9--X8pqBdEBw"
+                  src="/images/mecanismo-03-delgadez-endometrio.png"
                   alt="Punto 03 - Delgadez del endometrio"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"

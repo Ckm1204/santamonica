@@ -78,7 +78,7 @@ export default function ProcedureSection() {
             <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white relative group">
               <div className="relative w-full h-80 sm:h-96">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeSKQnjirWY4-NLIPjvZzm2o_dkfv6HGsQK_CB5dlL55h3vmc4Ff2tj2Ekf1GkdQsM_0H2TxuHPX5ec0tiqA_UMeyyss59HahGVO56jbyF3E5Oh3vv8tMm3I5OkU78lKXpsPgfGlgbo3bAYlZQvC3IL-n2a_Pqc__kLNrXVkk6d3Qxn9BGqM9JyXJ6pSACmX3X1v9rSEPF28gUAPuTKeGOskBq7BDOjHerMsW_bvSIXPz_1RoUUlZVQ434T2Zd2J3_DQ"
+                  src="/images/sinoimplant-insercion-pasos.png"
                   alt="Inserción correcta del implante subdérmico - Pasos clínicos oficiales"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"

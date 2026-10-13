@@ -30,7 +30,7 @@ export default function MythsSection() {
             <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-white relative group bg-white">
               <div className="relative w-full h-[360px] sm:h-[440px]">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuApuapM5ZzCGHar8o0l9b75q5lF14cYjfdXmrtG-m1NS9OAIN1r0ihsGfzJtsrH4zaViEl0CKsEACGygvmTB-btNXihk27BpLcFlyomTuJ9JNNakTO74j27PYAo3RFsOhJYA86adqex-0OmKH0NfLAj9welnXz8D5XM2PDHPNWEfqw6raLlre3jXtUoTCbNaMw5zZcZdkEcY-jAvmvpxYPhN16P4Q9a2zsPyDaxFiAuvUyGKIDpK0aYLVX-0jtbnqwdBQ"
+                  src="/images/sinoimplant-bienestar-decision.png"
                   alt="Tu bienestar, tu decisión - Sinoimplant"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"

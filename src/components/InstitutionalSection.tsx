@@ -11,7 +11,7 @@ export default function InstitutionalSection() {
             <div className="flex items-center gap-3">
               <div className="w-14 h-14 relative flex-shrink-0">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_ewq406qcJUA2ySOffCInX68ttQty5JNtyd8LevcYM4VVVRksXb-zCDdwc3LrVak5duyjHnEKNVUdTOp0gmSoiFBs3h7pENPMqpAs_YMSenDErTFfvyxA23bOk1-QHrFdOYihGSx65JP7RQ3LQy2ozMh0tEtTa_C_MCFHt9WoYvyxDtmJhvZ9H2kWvUnYwOu8hmWZ4HJMP9RsGbuzyph3pN0cUXWBx2muGLxojuQsPxpc897z3aM858eM4xnzLyXV9w"
+                  src="/images/logo-pasto-salud.png"
                   alt="Logo Oficial Pasto Salud E.S.E."
                   width={56}
                   height={56}
@@ -29,7 +29,7 @@ export default function InstitutionalSection() {
             <div className="flex items-center gap-3">
               <div className="w-14 h-14 relative flex-shrink-0">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqHsKq16QQzgUVdJV4AMlNuqXhi6zUoJUf7enUx9fcURFZqtz6Y2ONMQEGyvVzhTsV7KFarlfsWwCRQfMjt1qTx1vizV1p-Fbj97avjmqBDlE0AfYbY_P-ekooPbuTgO8lunlOK8cti4ZlYSdmnKIcGZC9miC9g1X2EhplE66fvmLdC6-L3vwnYGLaPqdY7G1wjXZOvltq57g4rvDNpVmeSq4OQ36OiOUi5svLOawTIPjzzUcA9PRtdERWGVgYQKQbbw"
+                  src="/images/logo-ucc.png"
                   alt="Logo Universidad Cooperativa de Colombia UCC"
                   width={56}
                   height={56}

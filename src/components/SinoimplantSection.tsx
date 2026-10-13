@@ -60,7 +60,7 @@ export default function SinoimplantSection() {
             <div className="rounded-3xl overflow-hidden shadow-lg border-2 border-surface-variant bg-surface-container-low group">
               <div className="relative w-full h-[320px] sm:h-[420px]">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBewNHEsseapI18k_MnASfj1il4naxvTQ9cSnuKI2u0LcgXuVaROcsA-wUex_FdOQAAIQzz0zPaKcIcB3S6Ng3h1eMfkn8quduO2pEZJk0e59dAb8nEki4WH_uW5wHxMyUEnlbNECVrTmJuCVGq9R7iBEalNJWBNQetkduUrBWkf_A63DO79TIf8QgewgDKMrEwwcsxthj06Wb8oNCG7HBI7ltC0qWAFuLtj87nu7NR1vG3HXkM9Q81lElFNvvDkJLgtQ"
+                  src="/images/sinoimplant-brazo-educativo.png"
                   alt="Ilustración educativa de colocación del implante subdérmico de 2 varillas en la cara interna del brazo no dominante a 6-8 cm sobre el pliegue del codo"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
